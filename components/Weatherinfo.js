@@ -4,9 +4,10 @@ import { View, StyleSheet, Text, Image} from 'react-native'
 
 import WeatherDetail from './WeatherDetail';
 
-export default function Weatherinfo({currentWeather}) {
+export default function Weatherinfo({currentWeather, unitsSystem}) {
+  console.log("inwinfo:"+unitsSystem);
     const {
-        main : {temp,feels_like},
+        main : {temp,feels_like,humidity,temp_max,temp_min},
         weather : [details],
         wind: {speed},
         name,
@@ -37,14 +38,14 @@ export default function Weatherinfo({currentWeather}) {
       <View style = {styles.detailHolder}>
 
         <View style = {styles.detatailRow}>
-        <WeatherDetail detail="Wind Speed" detailVar = {speed}/>
-        <WeatherDetail detail="Wind Speed" detailVar = {speed}/>
+        <WeatherDetail unitsSystem = {unitsSystem} detail="Wind Speed" detailVar = {speed}/>
+        <WeatherDetail unitsSystem = {unitsSystem} detail="Humidity" detailVar = {humidity}/>
 
         </View>
 
         <View style = {styles.detatailRow}>
-        <WeatherDetail detail="Wind Speed" detailVar = {speed}/>
-        <WeatherDetail detail="Wind Speed" detailVar = {speed}/>
+        <WeatherDetail unitsSystem = {unitsSystem} detail="temperature-high" detailVar = {temp_max}/>
+        <WeatherDetail unitsSystem = {unitsSystem} detail="temperature-low" detailVar = {temp_min}/>
 
         </View>
 
@@ -105,6 +106,7 @@ const styles = StyleSheet.create({
         color: '#F1F1F1'
     },
     detailHolder:{ /** This is the holder of all the rows, it makes the columns of the rows */
+      marginTop:25,
       flexDirection: 'column',
       justifyContent:'center',
     },

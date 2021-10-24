@@ -23,7 +23,7 @@ export default function App() {
     },[unitsSystem] )
 
   async function loadWeather(){
-
+    console.log("N:"+unitsSystem);
     setCurrentWeather(null);
     setErrorMsg(null);
     try {
@@ -69,7 +69,7 @@ export default function App() {
 
 
   if(currentWeather){
-
+    console.log(":"+unitsSystem);
     return (
       <View style={styles.container}>
         <StatusBar style="auto" />
@@ -83,7 +83,7 @@ export default function App() {
           
         </View>
         
-        <Weatherinfo currentWeather={currentWeather} />
+        <Weatherinfo currentWeather={currentWeather} unitsSystem = {unitsSystem} />
         
       </View>
     );
