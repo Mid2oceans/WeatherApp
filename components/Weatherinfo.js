@@ -2,10 +2,13 @@
 import React from 'react'
 import { View, StyleSheet, Text, Image} from 'react-native'
 
+import WeatherDetail from './WeatherDetail';
+
 export default function Weatherinfo({currentWeather}) {
     const {
         main : {temp,feels_like},
         weather : [details],
+        wind: {speed},
         name,
 
     } = currentWeather /** main: temp means in the json return file we just go in main class and get main.temp */
@@ -14,6 +17,7 @@ export default function Weatherinfo({currentWeather}) {
 
     return (
 
+      <View>
 
         <View style={styles.tempSquare}>
             <Text style = {styles.placeName}> {name}</Text>
@@ -28,6 +32,24 @@ export default function Weatherinfo({currentWeather}) {
         
         </View> 
 
+      </View>
+
+      <View style = {styles.detailHolder}>
+
+        <View style = {styles.detatailRow}>
+        <WeatherDetail detail="Wind Speed" detailVar = {speed}/>
+        <WeatherDetail detail="Wind Speed" detailVar = {speed}/>
+
+        </View>
+
+        <View style = {styles.detatailRow}>
+        <WeatherDetail detail="Wind Speed" detailVar = {speed}/>
+        <WeatherDetail detail="Wind Speed" detailVar = {speed}/>
+
+        </View>
+
+      </View>
+      
       </View>
     )
 }
@@ -81,5 +103,13 @@ const styles = StyleSheet.create({
     main:{
         fontSize:20,
         color: '#F1F1F1'
+    },
+    detailHolder:{ /** This is the holder of all the rows, it makes the columns of the rows */
+      flexDirection: 'column',
+      justifyContent:'center',
+    },
+    detatailRow:{
+      flexDirection:'row',
+      justifyContent:'center',
     },
   }); 
