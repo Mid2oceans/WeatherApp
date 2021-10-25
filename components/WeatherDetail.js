@@ -6,7 +6,6 @@ import { FontAwesome5 } from '@expo/vector-icons';
 
 export default function WeatherDetail({detail, detailVar, unitsSystem}) {
     var unit = 'mph'
-    console.log(unitsSystem);
     if(unitsSystem == 'Metric'){
         unit = 'kph'
     }

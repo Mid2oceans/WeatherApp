@@ -19,11 +19,10 @@ export default function App() {
 
 
   useEffect(() => {
-    loadWeather(); /** did it this way so that we can hav try and catch in order to catch error in case oif something like api mess up */
+    loadWeather(); /** did it this way so that we can hav try and catch in order to catch error in case if something like api mess up */
     },[unitsSystem] )
 
   async function loadWeather(){
-    console.log("N:"+unitsSystem);
     setCurrentWeather(null);
     setErrorMsg(null);
     try {
@@ -69,7 +68,6 @@ export default function App() {
 
 
   if(currentWeather){
-    console.log(":"+unitsSystem);
     return (
       <View style={styles.container}>
         <StatusBar style="auto" />

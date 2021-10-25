@@ -5,7 +5,6 @@ import { View, StyleSheet, Text, Image} from 'react-native'
 import WeatherDetail from './WeatherDetail';
 
 export default function Weatherinfo({currentWeather, unitsSystem}) {
-  console.log("inwinfo:"+unitsSystem);
     const {
         main : {temp,feels_like,humidity,temp_max,temp_min},
         weather : [details],
