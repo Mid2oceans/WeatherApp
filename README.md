@@ -14,4 +14,4 @@ Inside the project folder
 Images of app
 =============
 
-![Image1](imagesForReadMe/IMG_3678.jpg)
+![Image1](imagesForReadMe/IMG_3678.jpg =250x500)
