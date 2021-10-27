@@ -17,10 +17,10 @@ export default function App() {
   const [currentWeather, setCurrentWeather] = useState(null);
   const [unitsSystem,setUnitsSystem] = useState('Imperial');
 
-
+  /** After each render */
   useEffect(() => {
     loadWeather(); /** did it this way so that we can hav try and catch in order to catch error in case if something like api mess up */
-    },[unitsSystem] )
+    },[unitsSystem] ) /** unitSystem is the dependency here*/
 
   async function loadWeather(){
     setCurrentWeather(null);
