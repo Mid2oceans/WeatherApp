@@ -10,6 +10,10 @@ Clone the repository to your local machine
 Inside the project folder 
 ### expo start
 
+API Used
+========
+I used a free api from https://openweathermap.org/ to get the current weather data 
+
 
 Images of app
 =============

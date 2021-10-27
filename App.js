@@ -11,7 +11,7 @@ const WEATHER_API_KEY = 'f09fad3e3c7487a3d666c8e1175243bd';
 const BASE_WEATHER_URL = 'https://api.openweathermap.org/data/2.5/weather?'
 export default function App() {
 
-
+  /** useState instead of classes; no this.state; returns current state and the function that updates it  */
   const [location, setLocation] = useState(null);
   const [errorMsg, setErrorMsg] = useState(null);
   const [currentWeather, setCurrentWeather] = useState(null);
