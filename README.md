@@ -14,4 +14,5 @@ Inside the project folder
 Images of app
 =============
 
-![Image1](imagesForReadMe/IMG_3678.jpg)
+![In F](imagesForReadMe/IMG_3678.jpg)
+![In C](imagesForReadMe/IMG_3679.jpg)
