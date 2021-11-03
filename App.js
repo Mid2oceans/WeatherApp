@@ -1,11 +1,13 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useEffect, useState } from 'react';
-import { ActivityIndicator, StyleSheet, Text, View } from 'react-native';
+import { ActivityIndicator, Button, StyleSheet, Text, View } from 'react-native';
 import * as Location from 'expo-location'
 
 import Weatherinfo from './components/Weatherinfo';
 import UnitButton from './components/UnitButton';
 import ReloadButton from './components/ReloadButton';
+import SettingPopUp from './components/SettingPopUp';
+import SettingsButton from './components/SettingsButton';
 
 const WEATHER_API_KEY = 'f09fad3e3c7487a3d666c8e1175243bd';
 const BASE_WEATHER_URL = 'https://api.openweathermap.org/data/2.5/weather?'
@@ -16,6 +18,7 @@ export default function App() {
   const [errorMsg, setErrorMsg] = useState(null);
   const [currentWeather, setCurrentWeather] = useState(null);
   const [unitsSystem,setUnitsSystem] = useState('Imperial');
+  const [openSettings, setSettings] = useState(false);
 
   /** After each render */
   useEffect(() => {
@@ -72,14 +75,23 @@ export default function App() {
       <View style={styles.container}>
         <StatusBar style="auto" />
         <View style= {styles.topRowButtons}>
+
           <View style = {styles.UnitButton}>
-          <UnitButton unitsSystem={unitsSystem} setUnitsSystem={setUnitsSystem} />
+            <SettingsButton setSettings={setSettings} openSettings={openSettings} />
+            {/* <UnitButton unitsSystem={unitsSystem} setUnitsSystem={setUnitsSystem} /> */}
           </View>
+
           <View style={styles.ReloadButton}>
-          <ReloadButton load={loadWeather}/>
+            <ReloadButton load={loadWeather}/>
           </View>
-          
+
+
         </View>
+
+        <View style = {styles.SettingPopUp}>
+            <SettingPopUp openSettings = {openSettings} setSettings = {setSettings}/>
+        </View>
+        
         
         <Weatherinfo currentWeather={currentWeather} unitsSystem = {unitsSystem} />
         
@@ -136,4 +148,19 @@ const styles = StyleSheet.create({
     paddingRight:55,
     paddingTop:40,
   },
+
+  SettingsButton:{
+    flexDirection:'row',
+    paddingRight:55,
+    paddingLeft:55,
+    paddingTop:40,
+
+  },
+
+  SettingPopUp:{ /**Figure out why it is not centering */
+    justifyContent:'center',
+    alignItems: 'center',
+    paddingLeft:24,
+  }
+
 });
