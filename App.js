@@ -76,9 +76,8 @@ export default function App() {
         <StatusBar style="auto" />
         <View style= {styles.topRowButtons}>
 
-          <View style = {styles.UnitButton}>
+          <View style = {styles.SettingButton}>
             <SettingsButton setSettings={setSettings} openSettings={openSettings} />
-            {/* <UnitButton unitsSystem={unitsSystem} setUnitsSystem={setUnitsSystem} /> */}
           </View>
 
           <View style={styles.ReloadButton}>
@@ -89,7 +88,7 @@ export default function App() {
         </View>
 
         <View style = {styles.SettingPopUp}>
-            <SettingPopUp openSettings = {openSettings} setSettings = {setSettings}/>
+            <SettingPopUp openSettings = {openSettings} setSettings = {setSettings} setUnitsSystem = {setUnitsSystem} unitsSystem = {unitsSystem}/>
         </View>
         
         
@@ -132,7 +131,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  UnitButton:{
+  SettingButton:{
     width:'100%',
     alignItems:'flex-start',
     paddingLeft:25,
