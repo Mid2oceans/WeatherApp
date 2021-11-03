@@ -35,9 +35,9 @@ const styles = StyleSheet.create({
         left:'12%',
         width: 300,
         height: 400,
-        backgroundColor: '#A199AD',
+        backgroundColor: '#4E6969',
         borderRadius: 50,
-        borderWidth:1,
+        borderWidth:2,
     },
     buttonPlacement:{
         flexDirection:'row',
